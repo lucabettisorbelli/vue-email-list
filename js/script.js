@@ -9,9 +9,11 @@ createApp({
     },
     methods: {
         getEmails() {
+            for (let i = 0; i < 10; i++) {
                 axios.get(this.mailPath).then(response => {
                     this.emails.push(response.data.response);
                 });
+            }
         }
     },
     mounted() {
